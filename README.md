@@ -30,63 +30,60 @@ print z
 ## Interpreter structure
 
 ```
-<program> =<statement>
+<program>               = <statement>
 
-<block>				= "{" <statement> "}"
+<block>                 = "{" <statement> "}"
 
-statement               x= (<variable_decl> | <assignment_statement>) ";"
-                        x| <print_statement> ";"
-                         | <block> ";"
+<statement>             = (<variable_decl> | <assignment_statement>) ";"
+                        | <print_statement> ";"
+                        | <block> ";"
 
 <variable_decl>         = "var" <identifier> "=" <expression>
 
-<print_statement>       x= "print" <expression> 
+<print_statement>       = "print" <expression> 
 
-<assignment_statement>  x= <identifier> "=" <expression>
+<assignment_statement>  = <identifier> "=" <expression>
 
-##################################################################
-#----------------------------------------------------------------#
-##################################################################
+‹expression›            = ‹term› ‹additive-op› ‹term›
 
-‹expression›        x= ‹term› ‹additive-op› ‹term›
+‹term›                  = ‹factor› ‹multiplicative-op› ‹factor›
 
-‹term›              x= ‹factor› ‹multiplicative-op› ‹factor›
+‹factor›                = ‹literal›     
+                        | ‹identifier›
+                        | ‹sub-expression›
+                        | ‹unary›
+    
+‹literal›               = ‹int-literal›
+                        | ‹real-literal›
+                        | <string-literal>
+    
+‹sub-expression›        = "(" ‹expression› ")"
 
-‹factor›            x= ‹literal›     
-                    x| ‹identifier›
-                    x| ‹sub-expression›
-                    x| ‹unary›
+‹unary›                 = ( "+" | "-" ) { ‹expression› }
 
-‹literal›           			= ‹int-literal› | ‹real-literal› | <string-literal>
+‹additive-op›           = "+" | "-"
 
-‹sub-expression›= "(" ‹expression› ")"
+‹multiplicative-op›     = "*" | "/" | "^"
 
-‹unary›             			= ( "+" | "-" ) { ‹expression› }
+‹identifier›            = (‹letter›) { ‹letter› | ‹digit› }
 
-‹additive-op›       	= "+" | "-"
+‹int-literal›           = ‹digit› { ‹digit› }
 
-‹multiplicative-op›  = "*" | "/" | "^"
+‹real-literal›          = ‹digit› { ‹digit› } "." { ‹digit› }
+                        | "." ‹digit› { ‹digit› }
 
-‹identifier›         = (‹letter›) { ‹letter› | ‹digit› }
+‹printable›             = ‹digit› | ‹letter› | " " | "!" | """ | "#" | "$" | "%" | "&"
+                        | "'" | "(" | ")" | "*" | "+" | "," | "-" | "." | "/" | ":" | ";"
+                        | "<" | "=" | ">" | "?" | "@" | "[" | "\" | "]" | "^" | "_" | "`"
+                        | "{" | "|" | "}" | "~"
 
-‹int-literal›        = ‹digit› { ‹digit› }
+‹letter›                = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K"
+                        | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V"
+                        | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d" | "e" | "f" | "g"
+                        | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r"
+                        | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
 
-‹real-literal›      = ‹digit› { ‹digit› } "." { ‹digit› }
-                    	| "." ‹digit› { ‹digit› }
-
-‹printable›       = ‹digit› | ‹letter› | " " | "!" | """ | "#" | "$" | "%" | "&"
-                    	| "'" | "(" | ")" | "*" | "+" | "," | "-" | "." | "/" | ":" | ";"
-                    	| "<" | "=" | ">" | "?" | "@" | "[" | "\" | "]" | "^" | "_" | "`"
-                    	| "{" | "|" | "}" | "~"
-
-‹letter›            = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K"
-                    	| "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V"
-                    	| "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d" | "e" | "f" | "g"
-                    	| "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r"
-                    	| "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
-
-	‹digit› 		= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
-
+‹digit›                 = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 ```
 
 
