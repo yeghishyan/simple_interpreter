@@ -4,13 +4,13 @@
 
 - [Usage](#usage)
 - [Example](#example)
-- [Interpreter structure](#interpreterstructure)
+- [Interpreter structure](#interpreter-structure)
 - [Dependencies](#dependencies)
 
 ## Usage
 
 ```sh
-
+cmake --build build/
 ```
 
 
