@@ -2,7 +2,7 @@
 
 ## Table of contents
 
-[//]: # - [Usage](#usage)
+<!--- [Usage](#usage) --->
 - [Example](#example)
 - [Interpreter structure](#interpreter-structure)
 - [Dependencies](#dependencies)
