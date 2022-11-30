@@ -2,16 +2,18 @@
 
 ## Table of contents
 
-- [Usage](#usage)
+[//]: # - [Usage](#usage)
 - [Example](#example)
 - [Interpreter structure](#interpreter-structure)
 - [Dependencies](#dependencies)
 
+<!---
 ## Usage
 
 ```sh
 cmake --build build/
 ```
+-->
 
 
 ## Example
