@@ -17,13 +17,13 @@ cmake --build build/
 ## Example
 
 ```python
-print "hello world!"
-x = (9-1)/2.0
-print x
+print "hello world!"  //"hello world!"
+x = (9-1)/2.0         // 4.0
+print x               // 4.0
 y = -5
-print x*y
-x = 1 +
-print z
+print x*y             // -20.0
+//x = 1 +               
+//print z
 ```
 
 
