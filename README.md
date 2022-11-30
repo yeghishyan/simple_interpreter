@@ -4,8 +4,8 @@
 
 - [Usage](#usage)
 - [Example](#example)
-- [Interpreter structure](#strucure)
-- [Dependencies](#dependecies)
+- [Interpreter structure](#interpreter structure)
+- [Dependencies](#dependencies)
 
 ## Usage
 
