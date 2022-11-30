@@ -1,0 +1,60 @@
+//**
+<program>               x=<statement>
+
+<block>                = "{" <statement> "}"
+
+statement               x= (<variable_decl> | <assignment_statement>) ";"
+                        x| <print_statement> ";"
+                         | <block> ";"
+
+<variable_decl>         = "var" <identifier> "=" <expression>
+
+<print_statement>       x= "print" <expression> 
+
+<assignment_statement>  x= <identifier> "=" <expression>
+
+##################################################################
+#----------------------------------------------------------------#
+##################################################################
+
+‹expression›        x= ‹term› ‹additive-op› ‹term›
+
+‹term›              x= ‹factor› ‹multiplicative-op› ‹factor›
+
+‹factor›            x= ‹literal›     
+                    x| ‹identifier›
+                    x| ‹sub-expression›
+                    x| ‹unary›
+
+‹literal›           = ‹int-literal›
+                    | ‹real-literal›
+                    | <string-literal>
+
+‹sub-expression›    x= "(" ‹expression› ")"
+
+‹unary›             x= ( "+" | "-" ) { ‹expression› }
+
+‹additive-op›       x= "+" | "-"
+
+‹multiplicative-op› x= "*" | "/" | "^"
+
+‹identifier›        x= (‹letter›) { ‹letter› | ‹digit› }
+
+‹int-literal›       x= ‹digit› { ‹digit› }
+
+‹real-literal›      x= ‹digit› { ‹digit› } "." { ‹digit› }
+                    | "." ‹digit› { ‹digit› }
+
+‹printable›         x= ‹digit› | ‹letter› | " " | "!" | """ | "#" | "$" | "%" | "&"
+                    x| "'" | "(" | ")" | "*" | "+" | "," | "-" | "." | "/" | ":" | ";"
+                    x| "<" | "=" | ">" | "?" | "@" | "[" | "\" | "]" | "^" | "_" | "`"
+                    x| "{" | "|" | "}" | "~"
+
+‹letter›            x= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K"
+                    x| "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V"
+                    x| "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d" | "e" | "f" | "g"
+                    x| "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r"
+                    x| "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
+
+‹digit›             x= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+**//
