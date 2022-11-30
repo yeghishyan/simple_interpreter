@@ -30,15 +30,3 @@ int main() {
 
     return 0;
 }
-/*
-print "hello world!"
-x = (9-1)/2.0
-print x
-y = -5
-print x*y
-
-x = 1 +
-print z
-
-
-*/
